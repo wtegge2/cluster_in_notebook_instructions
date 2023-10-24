@@ -72,10 +72,31 @@ ClientContext(dashboard_url='127.0.0.1:8265', python_version='3.9.12', ray_versi
 ```
 
 
-You can also run the command below to double check that the HAL node you are on is connected to the Ray cluster you launched. 
+**Note**: You can also run the command below to double check that the HAL node you are on is connected to the Ray cluster you launched. 
 ```
 ray.nodes()
 ```
+The output should look something like this:
+```
+OUTPUT:
+[{'NodeID': '0e3c4b2fa7268e8f9617d924efbbcb60afcc77b12d8d3a9187fc3c50',
+  'Alive': True,
+  'NodeManagerAddress': '192.168.20.8',
+  'NodeManagerHostname': 'hal08',
+  'NodeManagerPort': 35303,
+  'ObjectManagerPort': 32897,
+  'ObjectStoreSocketName': '/tmp/ray/session_2023-10-18_10-53-20_206789_3370058/sockets/plasma_store',
+  'RayletSocketName': '/tmp/ray/session_2023-10-18_10-53-20_206789_3370058/sockets/raylet',
+  'MetricsExportPort': 59281,
+  'alive': True,
+  'Resources': {'memory': 185370503373.0,
+   'node:192.168.20.8': 1.0,
+   'object_store_memory': 83730215731.0,
+   'accelerator_type:V100': 1.0,
+   'CPU': 32.0,
+   'GPU': 1.0}}]
+```
+
 
 **7**. Feel free to create new cells below and input any code you wish to run on the cluster. 
 
