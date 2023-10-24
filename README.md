@@ -10,13 +10,13 @@ This is the instruction for setting up a Ray cluster with autoscaling capability
 
 ## Instructions
 
-1. Download the autoscaler code and deployment script from https://github.com/TingkaiLiu/Ray-SLURM-autoscaler by running:
+**1**. Download the autoscaler code and deployment script from https://github.com/TingkaiLiu/Ray-SLURM-autoscaler by running:
 ```
 git clone https://github.com/TingkaiLiu/Ray-SLURM-autoscaler.git
 ```
 
 
-2. Download the script that automatically launches the Ray cluster for you from https://github.com/wtegge2/Ray_cluster_automation by running:
+**2**. Download the script that automatically launches the Ray cluster for you from https://github.com/wtegge2/Ray_cluster_automation by running:
 ```
 git clone https://github.com/wtegge2/Ray_cluster_automation.git
 ```
@@ -24,13 +24,13 @@ git clone https://github.com/wtegge2/Ray_cluster_automation.git
 It is important to note that you should download this in the same directory that you performed step 1 in. 
 
 
-3. Launch a Jupyter Notebook through the OnDemand site. 
+**3**. Launch a Jupyter Notebook through the OnDemand site. 
 
 
-4. Move your desired project notebook into the same directory that you performed steps 1 and 2 in, or just create a new empty notebook. 
+**4**. Move your desired project notebook into the same directory that you performed steps 1 and 2 in, or just create a new empty notebook. 
 
 
-5. Create a new code cell in the notebook. Enter the below code to in order to launch the automation script. You should change the arguments to fit what requirements you want the cluster to have. A description of the arguments can be found below. 
+**5**. Create a new code cell in the notebook. Enter the below code to in order to launch the automation script. You should change the arguments to fit what requirements you want the cluster to have. A description of the arguments can be found below. 
 ```
 import os
 os.system("python auto_script.py NetID Environment HEAD_NODE_CPUS HEAD_NODE_GPUS WORKER_NODE_CPUS WORKER_NODE_GPUS")
@@ -52,7 +52,7 @@ To run this cell in the notebook, hold down the shift key and press enter.
 It should look something like: "Local node IP: 192.168.20.8"
 
 
-6. Create a new code cell below. Copy and paste the below code. This block of code initiates Ray and connects you to the Ray cluster that you just launched in the previous cell using the Local Node IP you found in the output. 
+**6**. Create a new code cell below. Copy and paste the below code. This block of code initiates Ray and connects you to the Ray cluster that you just launched in the previous cell using the Local Node IP you found in the output. 
 ```
 import ray
 ray.init(address='ray://<Local_Node_IP_HERE>:10001')
@@ -72,10 +72,10 @@ You can also run the command below to double check that the HAL node you are on 
 ray.nodes()
 ```
 
-7. Feel free to create new cells below and input any code you wish to run on the cluster. 
+**7**. Feel free to create new cells below and input any code you wish to run on the cluster. 
 
 
-8. When you are finished working, always remember to tear down you Ray cluster! 
+**8**. When you are finished working, always remember to tear down you Ray cluster! 
 
 To tear down the Ray cluster from inside the Jupyter Notebook, create a new cell and run the following code:
 ```
