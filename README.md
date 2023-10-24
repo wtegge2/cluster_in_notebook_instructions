@@ -6,6 +6,11 @@ This is the instruction for setting up a Ray cluster with autoscaling capability
 
 
 ## Private Environment and Requirements
+Go to this site:  https://wiki.ncsa.illinois.edu/pages/viewpage.action?pageId=208994578
+
+Follow the directions in the section titled "Get the Ray library into your private environment" to create your own private environment that contains Ray. 
+
+You will need all the files from the repositories mentioned below in steps 1 and 2. 
 
 
 ## Instructions
