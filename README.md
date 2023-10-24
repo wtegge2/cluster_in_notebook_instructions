@@ -42,12 +42,12 @@ os.system("python auto_script.py NetID Environment HEAD_NODE_CPUS HEAD_NODE_GPUS
 ```
 
 Arguments:
-NetID - User's UIUC NetID
-Environment - User's conda environment
-HEAD_NODE_CPUS - Number of CPUs you would like on the head node
-HEAD_NODE_GPUS - Number of GPUs you would like on the head node
-WORKER_NODE_CPUS - Number of CPUs you would like on each worker node
-WORKER_NODE_GPUS - Number of GPUs you would like on each worker node
+* NetID - User's UIUC NetID
+* Environment - User's conda environment
+* HEAD_NODE_CPUS - Number of CPUs you would like on the head node
+* HEAD_NODE_GPUS - Number of GPUs you would like on the head node
+* WORKER_NODE_CPUS - Number of CPUs you would like on each worker node
+* WORKER_NODE_GPUS - Number of GPUs you would like on each worker node
 
 To run this cell in the notebook, hold down the shift key and press enter. 
 
