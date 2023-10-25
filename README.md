@@ -91,6 +91,8 @@ OUTPUT:
    'GPU': 1.0}}]
 ```
 
+You should see the same Local Node IP listed as the "NodeManagerAddress" field in the printed message. 
+
 
 **6**. Feel free to create new cells below and input any code you wish to run on the cluster. 
 
@@ -103,4 +105,5 @@ import os
 cwd = os.getcwd()
 os.chdir(cwd + '/Ray-SLURM-autoscaler')
 os.system("ray down ray-slurm.yaml --yes")
+os.chdir(cwd)
 ```
