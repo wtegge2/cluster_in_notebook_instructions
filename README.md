@@ -14,28 +14,18 @@ You will need all the files from the repositories mentioned below in steps 1 and
 
 
 ## Instructions
-
-**1**. Download the autoscaler code and deployment script from https://github.com/TingkaiLiu/Ray-SLURM-autoscaler by running:
-```
-git clone https://github.com/TingkaiLiu/Ray-SLURM-autoscaler.git
-```
-
-
-**2**. Download the script that automatically launches the Ray cluster for you from https://github.com/wtegge2/Ray_cluster_automation by running:
+**1**. Download the script that automatically launches the Ray cluster for you from https://github.com/wtegge2/Ray_cluster_automation by running:
 ```
 git clone https://github.com/wtegge2/Ray_cluster_automation.git
 ```
 
-It is important to note that you should download this in the same directory that you performed step 1 in. 
+**2**. Launch a Jupyter Notebook through the OnDemand site. 
 
 
-**3**. Launch a Jupyter Notebook through the OnDemand site. 
+**3**. Move your desired project notebook into the same directory that you performed step 1 in, or just create a new empty notebook. 
 
 
-**4**. Move your desired project notebook into the same directory that you performed steps 1 and 2 in, or just create a new empty notebook. 
-
-
-**5**. Create a new code cell in the notebook. Enter the below code to in order to launch the automation script. You should change the arguments to fit what requirements you want the cluster to have. A description of the arguments can be found below. 
+**4**. Create a new code cell in the notebook. Enter the below code to in order to launch the automation script. You should change the arguments to fit what requirements you want the cluster to have. A description of the arguments can be found below. 
 ```
 import os
 os.system("python auto_script.py NetID Environment HEAD_NODE_CPUS HEAD_NODE_GPUS WORKER_NODE_CPUS WORKER_NODE_GPUS")
@@ -54,10 +44,12 @@ To run this cell in the notebook, hold down the shift key and press enter.
 
 **Note**: This will print out a big message. Look for a line in the output that contains the 'Local Node IP'. This corresponds to the HAL node that your Jupyter Notebook is running on.  This IP is important. You need to take note of this IP as it will be used in the next step. 
 
-It should look something like: "Local node IP: 192.168.20.8"
+It should look something like (exact number differs depending on which HAL node you are on): "Local node IP: 192.168.20.8"
+
+Also, this may not work the first time you run it. A different message may print out that does not contain the local node IP mentioned above. If this occurs, skip to step 7 to shut down the cluster and re-launch the Notebook. 
 
 
-**6**. Create a new code cell below. Copy and paste the below code. This block of code initiates Ray and connects you to the Ray cluster that you just launched in the previous cell using the Local Node IP you found in the output. 
+**5**. Create a new code cell below. Copy and paste the below code. This block of code initiates Ray and connects you to the Ray cluster that you just launched in the previous cell using the Local Node IP you found in the output. 
 ```
 import ray
 ray.init(address='ray://<Local_Node_IP_HERE>:10001')
@@ -98,10 +90,10 @@ OUTPUT:
 ```
 
 
-**7**. Feel free to create new cells below and input any code you wish to run on the cluster. 
+**6**. Feel free to create new cells below and input any code you wish to run on the cluster. 
 
 
-**8**. When you are finished working, always remember to tear down you Ray cluster! 
+**7**. When you are finished working, always remember to tear down you Ray cluster! 
 
 To tear down the Ray cluster from inside the Jupyter Notebook, create a new cell and run the following code:
 ```
