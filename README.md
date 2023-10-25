@@ -10,7 +10,7 @@ Go to this site:  https://wiki.ncsa.illinois.edu/pages/viewpage.action?pageId=20
 
 Follow the directions in the section titled "Get the Ray library into your private environment" to create your own private environment that contains Ray. 
 
-You will need all the files from the repositories mentioned below in steps 1 and 2. 
+You will need all the files from the repository mentioned below in step 1. 
 
 
 ## Instructions
