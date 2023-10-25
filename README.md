@@ -28,6 +28,8 @@ git clone https://github.com/wtegge2/Ray_cluster_automation.git
 **4**. Create a new code cell in the notebook. Enter the below code to in order to launch the automation script. You should change the arguments to fit what requirements you want the cluster to have. A description of the arguments can be found below. 
 ```
 import os
+cwd = os.getcwd()
+os.chdir(cwd + '/Ray_cluster_automation')
 os.system("python auto_script.py NetID Environment HEAD_NODE_CPUS HEAD_NODE_GPUS WORKER_NODE_CPUS WORKER_NODE_GPUS")
 ```
 
