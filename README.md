@@ -91,7 +91,9 @@ OUTPUT:
    'GPU': 1.0}}]
 ```
 
-You should see the same Local Node IP listed as the "NodeManagerAddress" field in the printed message. 
+You should see the same Local Node IP listed as the "NodeManagerAddress" field in the printed message. This is the head node of your Ray cluster. 
+
+In this message, you can also see that the resources you emtered as arguments show up under the "CPU" and "GPU" fields. These values should match what you entered for HEAD_NODE_CPUS and HEAD_NODE_GPUS respectively. 
 
 
 **6**. Feel free to create new cells below and input any code you wish to run on the cluster. 
